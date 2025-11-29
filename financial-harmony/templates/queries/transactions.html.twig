@@ -1,0 +1,44 @@
+{# templates/queries/transactions.html.twig #}
+{# Partial Twig da seção "Query Transactions".
+   IDs preservados para 100% de compatibilidade com o JS existente. #}
+
+<div class="section" id="query-transactions-section">
+    <h2>Query Transactions</h2>
+
+    <div class="form-group">
+        <label for="queryTxAccountNumber">Find Transactions by Account Number (Encrypted Query)</label>
+        <input
+            type="text"
+            id="queryTxAccountNumber"
+            name="queryTxAccountNumber"
+            value="{{ queryTxAccountNumber|default('1234567890') }}"
+        >
+        <button onclick="findTransactionsByAccountNumber()">Find Transactions</button>
+    </div>
+
+    <div class="form-group">
+        <label>Find Transactions by Amount Range (Encrypted Range Query)</label>
+
+        <div style="display: flex; gap: 10px;">
+            <input
+                type="number"
+                id="minAmount"
+                name="minAmount"
+                value="{{ minAmount|default(500) }}"
+                placeholder="Min Amount"
+            >
+            <input
+                type="number"
+                id="maxAmount"
+                name="maxAmount"
+                value="{{ maxAmount|default(2000) }}"
+                placeholder="Max Amount"
+            >
+            <button onclick="findTransactionsByAmountRange()">Find Transactions</button>
+        </div>
+    </div>
+
+    <button onclick="getAllTransactions()">Get All Transactions</button>
+
+    <div id="transactionQueryResult" class="result" style="display: none;"></div>
+</div>

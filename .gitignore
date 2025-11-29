@@ -1,0 +1,79 @@
+# -------------------------------
+#  GLOBAL / ROOT LEVEL IGNORE
+# -------------------------------
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# VSCode configs
+.vscode/
+*.code-workspace
+
+# PowerShell history
+*.pshistory
+*.bash_history
+
+# Node junk (if exists)
+node_modules/
+
+# -------------------------------
+#  DOCKER
+# -------------------------------
+docker/**/logs/
+docker/**/data/
+docker/**/tmp/
+docker/**/.env
+docker-compose.override.yml
+
+# -------------------------------
+#  SYMFONY PROJECT (financial-harmony)
+# -------------------------------
+/financial-harmony/var/
+/financial-harmony/vendor/
+/financial-harmony/node_modules/
+/financial-harmony/.env.local
+/financial-harmony/.env.dev.local
+/financial-harmony/.env.test
+/financial-harmony/.env.test.local
+/financial-harmony/.env.dev
+/financial-harmony/.env.production
+/financial-harmony/.phpunit.result.cache
+
+# Evitar binários do mongo_crypt
+financial-harmony/bin/lib/
+
+# Symfony cache
+/financial-harmony/var/cache/
+/financial-harmony/var/log/
+
+# Composer vendor
+/financial-harmony/vendor/
+
+# Encrypted keys (never track)
+financial-harmony/config/secrets/*/*
+
+# Proxies / Hydrators (Doctrine ODM)
+financial-harmony/var/cache/*/doctrine/odm/mongodb/Proxies/
+financial-harmony/var/cache/*/doctrine/odm/mongodb/Hydrator/
+
+# Docker volumes inside Symfony folder
+financial-harmony/docker/data/
+
+# -------------------------------
+#  IGNORE BACKUPS / TEMP
+# -------------------------------
+*.bak
+*.old
+*.swp
+*.swo
+
+# -------------------------------
+#  PROJECT FILES YOU WANT IGNORED
+# -------------------------------
+deploy.ps1
+deployAll.ps1
+.composer/
+.symfony5/

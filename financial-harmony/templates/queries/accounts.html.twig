@@ -1,0 +1,31 @@
+{# templates/queries/accounts.html.twig #}
+{# Partial Twig da seção "Query Accounts". #}
+
+<div class="section" id="query-accounts-section">
+    <h2>Query Accounts</h2>
+
+    <div class="form-group">
+        <label for="queryAccountNumber">Find Account by Number (Encrypted Query)</label>
+        <input type="text" id="queryAccountNumber" name="queryAccountNumber" value="{{ queryAccountNumber|default('1234567890') }}">
+        <button onclick="findAccountByNumber()">Find Account</button>
+    </div>
+
+    <div class="form-group">
+        <label for="querySsn">Find Account by SSN (Encrypted Query)</label>
+        <input type="text" id="querySsn" name="querySsn" value="{{ querySsn|default('123-45-6789') }}">
+        <button onclick="findAccountBySsn()">Find Account</button>
+    </div>
+
+    <div class="form-group">
+        <label>Find Accounts by Balance Range (Encrypted Range Query)</label>
+        <div style="display: flex; gap: 10px;">
+            <input type="number" id="minBalance" name="minBalance" value="{{ minBalance|default(25000) }}" placeholder="Min Balance">
+            <input type="number" id="maxBalance" name="maxBalance" value="{{ maxBalance|default(75000) }}" placeholder="Max Balance">
+            <button onclick="findAccountsByBalanceRange()">Find Accounts</button>
+        </div>
+    </div>
+
+    <button onclick="getAllAccounts()">Get All Accounts</button>
+
+    <div id="accountQueryResult" class="result" style="display: none;"></div>
+</div>

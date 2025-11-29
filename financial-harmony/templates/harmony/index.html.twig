@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Financial Harmony — Demo{% endblock %}
+
+{% block body %}
+
+    {% include 'components/encryption-info.html.twig' %}
+
+    <div class="grid">
+        <div>
+            {% include 'forms/create-account.html.twig' %}
+        </div>
+
+        <div>
+            {% include 'forms/create-transaction.html.twig' %}
+        </div>
+    </div>
+
+    <div class="grid" style="margin-top: 40px;">
+        <div>
+            {% include 'queries/accounts.html.twig' %}
+        </div>
+
+        <div>
+            {% include 'queries/transactions.html.twig' %}
+        </div>
+    </div>
+
+{% endblock %}
